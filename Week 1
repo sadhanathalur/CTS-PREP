@@ -1,0 +1,43 @@
+# Week 1 - Foundation
+
+## Topics Covered
+
+### SOLID Principles
+- Single Responsibility Principle (SRP)
+- Open Closed Principle (OCP)
+- Liskov Substitution Principle (LSP)
+- Interface Segregation Principle (ISP)
+- Dependency Inversion Principle (DIP)
+
+### Design Patterns
+- Singleton
+- Factory
+- Builder
+- Adapter
+- Decorator
+- Proxy
+- Observer
+- Strategy
+- Command
+
+### Data Structures & Algorithms
+- Time Complexity
+- Big O, Big Ω, Big Θ
+- Arrays
+- Linear Search
+- Binary Search
+- Bubble Sort
+- Merge Sort
+- Quick Sort
+- Linked Lists
+
+### PL/SQL
+- Introduction
+- Block Structure
+- Variables
+- Control Structures
+- Exception Handling
+- Cursors
+- Procedures & Functions
+- Packages
+- Triggers
