@@ -1,0 +1,67 @@
+# Week 2 - Testing & Spring Core
+
+## Topics Covered
+
+### Test-Driven Development (TDD)
+- Introduction to TDD
+- TDD Workflow
+- Red-Green-Refactor Cycle
+- Benefits of TDD
+
+### Unit Testing
+- Introduction to Unit Testing
+- Unit Testing vs Integration Testing
+- Advantages of Unit Testing
+
+### JUnit 5
+- JUnit Platform
+- JUnit Jupiter
+- JUnit Vintage
+- Annotations
+  - @Test
+  - @BeforeEach
+  - @AfterEach
+  - @BeforeAll
+  - @AfterAll
+  - @Disabled
+- Assertions
+  - assertEquals()
+  - assertTrue()
+  - assertFalse()
+  - assertNotNull()
+- Assumptions
+- Parameterized Tests
+- Test Lifecycle
+
+### Mockito
+- Introduction to Mockito
+- Mock Objects
+- Stubbing
+- Verification
+
+### Maven
+- Introduction
+- Project Structure
+- Dependencies
+- pom.xml
+
+### Spring Core
+- Spring Framework
+- IoC (Inversion of Control)
+- Dependency Injection
+- Beans
+- Bean Configuration
+
+### Spring AOP
+- Introduction
+- Advantages
+- Advice
+- Aspect
+- Join Point
+
+### Spring MVC
+- MVC Architecture
+- Controller
+- Model
+- View
+- Request Mapping
