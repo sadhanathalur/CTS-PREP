@@ -10,6 +10,10 @@
           class="com.library.repository.BookRepository"/>
 
     <bean id="bookService"
-          class="com.library.service.BookService"/>
+          class="com.library.service.BookService">
+
+        <property name="bookRepository" ref="bookRepository"/>
+
+    </bean>
 
 </beans>
