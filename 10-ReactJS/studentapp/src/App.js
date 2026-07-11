@@ -1,15 +1,10 @@
 import React from "react";
-import CalculateScore from "./Components/CalculateScore";
+import Posts from "./Posts";
 
 function App() {
     return (
         <div>
-            <CalculateScore
-                name="Sadhana"
-                school="RMK College of Engineering and Technology"
-                total={475}
-                goal={5}
-            />
+            <Posts />
         </div>
     );
 }
