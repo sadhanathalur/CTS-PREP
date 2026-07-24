@@ -1,0 +1,61 @@
+.course-card {
+  border: 1px solid #d1d5db;
+  border-left: 4px solid transparent;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: max-height 0.2s ease;
+}
+
+.course-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.course-card button {
+  padding: 0.4rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Task 2 - ngClass driven states */
+.card--enrolled {
+  background-color: #ecfdf5;
+}
+
+.card--full {
+  box-shadow: 0 0 0 1px #f59e0b inset;
+}
+
+.expanded {
+  padding-bottom: 1.5rem;
+}
+
+.badge-row {
+  margin: 0.5rem 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.badge--passed {
+  background-color: green;
+}
+
+.badge--failed {
+  background-color: red;
+}
+
+.badge--pending {
+  background-color: grey;
+}
+
+.details {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}

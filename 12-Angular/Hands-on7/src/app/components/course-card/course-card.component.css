@@ -1,0 +1,10 @@
+.course-card { border: 1px solid #ddd; border-left: 6px solid grey; border-radius: 6px; padding: 1rem; margin: 0.5rem 0; background: #fff; }
+.course-card.card--enrolled { background: #e8f5e9; }
+.course-card.card--full { font-weight: bold; }
+.course-card.expanded { min-height: 160px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 0.8rem; }
+.badge--passed { background: green; }
+.badge--failed { background: red; }
+.badge--pending { background: grey; }
+.actions { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+h3 { cursor: pointer; }

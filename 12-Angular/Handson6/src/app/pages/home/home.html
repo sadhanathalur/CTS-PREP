@@ -1,0 +1,31 @@
+<h1>{{ portalName }}</h1>
+<p>Browse courses, track enrollments, and manage your academic profile all in one place.</p>
+
+<div class="stats-row">
+  <div class="stat">
+    <span class="stat-value">{{ coursesAvailable }}</span>
+    <span class="stat-label">Courses Available</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">3</span>
+    <span class="stat-label">Enrolled</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">3.8</span>
+    <span class="stat-label">GPA</span>
+  </div>
+</div>
+
+<div class="enroll-action">
+  <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p *ngIf="message">{{ message }}</p>
+</div>
+
+<div class="search-box">
+  <input [(ngModel)]="searchTerm" placeholder="Search courses..." />
+  <p>Searching for: {{ searchTerm }}</p>
+</div>
+
+<app-course-summary-widget></app-course-summary-widget>
+
+<app-notification></app-notification>

@@ -1,0 +1,12 @@
+<h2>Student Profile</h2>
+<h3>Enrolled Courses</h3>
+
+<p *ngIf="isLoading">Loading enrolled courses...</p>
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+<ul *ngIf="!isLoading && enrolledCourses.length > 0; else none">
+  <li *ngFor="let c of enrolledCourses">{{ c.name }} ({{ c.code }})</li>
+</ul>
+<ng-template #none>
+  <p *ngIf="!isLoading">No courses enrolled yet.</p>
+</ng-template>

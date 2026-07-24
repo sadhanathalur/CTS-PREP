@@ -1,0 +1,21 @@
+import { inject } from '@angular/core';
+import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
+
+// Hands-On 8 Task 3 (Step 90): global HTTP error handling — 401 redirects home,
+// 500 logs a global notification; the error is always rethrown afterwards.
+export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
+  const router = inject(Router);
+
+  return next(req).pipe(
+    catchError((error: HttpErrorResponse) => {
+      if (error.status === 401) {
+        router.navigate(['/']);
+      } else if (error.status === 500) {
+        console.error('Global notification: a server error occurred. Please try again later.');
+      }
+      return throwError(() => error);
+    })
+  );
+};

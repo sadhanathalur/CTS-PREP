@@ -1,0 +1,81 @@
+Hands-On 1 - Task 1: Notes on Generated Angular Project Files
+================================================================
+
+angular.json
+  - The Angular workspace configuration file. Defines projects, build targets,
+    file replacements, asset paths, styles, scripts, and the production
+    build budgets (bundle size limits) for the whole project.
+
+tsconfig.json
+  - The base/root TypeScript configuration shared across the workspace. Sets
+    global compiler options (strict mode, module resolution, target ES
+    version) that tsconfig.app.json and tsconfig.spec.json extend from.
+
+tsconfig.app.json
+  - The TypeScript configuration used specifically to compile the
+    application's runtime source code (excludes spec/test files).
+
+package.json
+  - Lists the project's npm dependencies (Angular packages, RxJS, zone.js)
+    and devDependencies (CLI, TypeScript, Jasmine/Karma), plus the npm
+    scripts used to run, build, and test the app (ng serve, ng build, ng test).
+
+src/main.ts
+  - The application entry point. It bootstraps the standalone root component
+    (App) using bootstrapApplication() together with the appConfig providers,
+    which is how Angular 20 starts the app without an NgModule.
+
+src/app/app.config.ts (standalone mode equivalent of app.module.ts)
+  - Configures the application-wide providers for the standalone app:
+    change detection, global error listeners, and the router
+    (provideRouter(routes)). This file replaces the old AppModule.
+
+src/app/app.ts (root/App component - equivalent of app.component.ts)
+  - The root standalone component of the application (selector: app-root).
+    It hosts the shared header and the router-outlet where routed pages
+    are rendered.
+
+src/index.html
+  - The single HTML page served to the browser. Contains the <app-root>
+    tag where Angular bootstraps the application, and is the shell into
+    which all compiled JS/CSS bundles are injected.
+
+Note: Angular 20 (via the modern Angular CLI schematics) generates
+app.ts / app.html / app.css instead of the older app.component.ts /
+app.component.html / app.component.css naming, and uses app.config.ts +
+app.routes.ts instead of app.module.ts, since standalone components are
+now the default (no NgModules required).
+
+
+Hands-On 1 - Task 1, Step 4: ng build / dist/ Output
+================================================================
+After running `ng build`, the compiled output is written to:
+  dist/student-course-portal/browser/
+
+Files produced:
+  - index.html               : the shell page, updated with hashed script/style tags
+  - main-<hash>.js            : the compiled application code (all TS -> JS,
+                                 templates, and app logic bundled together) - THIS
+                                 is the file that contains the compiled app code.
+  - polyfills-<hash>.js        : browser polyfills required by Angular/zone.js
+  - styles-<hash>.css          : the compiled global stylesheet
+  - favicon.ico                : the app's static favicon asset
+
+
+Hands-On 1 - Task 1, Step 5: angular.json Build Budgets
+================================================================
+Location: projects > student-course-portal > architect > build > configurations > production > budgets
+
+- maximumWarning: the bundle size threshold above which the Angular CLI
+  prints a build WARNING but still completes the build successfully.
+- maximumError: the bundle size threshold above which the Angular CLI
+  FAILS the build with an error, forcing bundle size to be reduced before
+  the app can be built for production.
+
+These thresholds apply per budget "type" (e.g. "initial" bundle, or
+individual component "anyComponentStyle") and exist to catch bundle-size
+regressions early, before they reach production.
+
+Observed values in this project's angular.json:
+- type "initial":            maximumWarning = 500kB, maximumError = 1MB
+- type "anyComponentStyle":  maximumWarning = 4kB,   maximumError = 8kB

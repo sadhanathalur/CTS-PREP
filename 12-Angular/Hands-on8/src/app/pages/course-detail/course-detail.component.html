@@ -1,0 +1,18 @@
+<p *ngIf="isLoading">Loading course...</p>
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+<div *ngIf="course">
+  <h2>{{ course.name }}</h2>
+  <p>Code: {{ course.code }}</p>
+  <p>Credits: {{ course.credits }}</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+
+  <h3>Enrolled Students</h3>
+  <p *ngIf="studentsLoading">Loading students...</p>
+  <ul *ngIf="!studentsLoading && students.length > 0">
+    <li *ngFor="let s of students">{{ s.name }}</li>
+  </ul>
+  <p *ngIf="!studentsLoading && students.length === 0">No students enrolled yet.</p>
+</div>
+
+<a routerLink="/courses">Back to Courses</a>

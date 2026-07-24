@@ -1,0 +1,4 @@
+.portal-nav { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1e3a8a; color: #fff; }
+.portal-name { font-weight: bold; margin-right: 1rem; }
+.portal-nav a { color: #fff; text-decoration: none; }
+.portal-nav a.active { text-decoration: underline; font-weight: bold; }

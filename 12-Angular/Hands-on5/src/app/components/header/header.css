@@ -1,0 +1,24 @@
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.portal-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
