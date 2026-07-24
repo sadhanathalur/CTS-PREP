@@ -1,11 +1,8 @@
-<h1>Welcome to Student Course Portal</h1>
+<h1>Student Course Portal</h1>
 
-<p>
-  Manage your courses, profile and enrollments from one place.
-</p>
+<input
+  type="text"
+  (input)="update($event)"
+  placeholder="Search course">
 
-<div>
-  <p><b>Courses Available:</b> 12</p>
-  <p><b>Enrolled:</b> 3</p>
-  <p><b>GPA:</b> 3.8</p>
-</div>
+<p>Searching for: {{ searchTerm }}</p>

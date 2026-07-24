@@ -1,9 +1,20 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.css'
 })
-export class Home {}
+export class Home {
+
+  searchTerm = '';
+
+  update(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.searchTerm = input.value;
+    console.log(this.searchTerm);
+  }
+}
