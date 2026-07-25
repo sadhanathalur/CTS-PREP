@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { ListofPlayers, Scorebelow70 } from "./Components/ListofPlayers";
+
+import {
+  OddPlayers,
+  EvenPlayers,
+  IndianPlayers,
+  ListofIndianPlayers,
+} from "./Components/IndianPlayers";
 
 function App() {
+
+  let flag = true;
+
+  if (flag) {
+    return (
+        <div>
+
+          <ListofPlayers />
+
+          <hr />
+
+          <Scorebelow70 />
+
+        </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+
+        <h2>Odd Team Players</h2>
+
+        <OddPlayers
+            IndianTeam={[
+              "Sachin",
+              "Dhoni",
+              "Virat",
+              "Rohit",
+              "Yuvraj",
+              "Raina",
+            ]}
+        />
+
+        <hr />
+
+        <h2>Even Team Players</h2>
+
+        <EvenPlayers
+            IndianTeam={[
+              "Sachin",
+              "Dhoni",
+              "Virat",
+              "Rohit",
+              "Yuvraj",
+              "Raina",
+            ]}
+        />
+
+        <hr />
+
+        <h2>List of Indian Players Merged</h2>
+
+        <ListofIndianPlayers IndianPlayers={IndianPlayers} />
+
+      </div>
   );
 }
 
